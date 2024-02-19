@@ -55,8 +55,50 @@ Allows you to view all orders. Requires authentication.
 ### Get an order ###
 
 GET `/orders/:orderId`
+```
+{
+    "id": "AUikJSELejNRiXRV7kLK2",
+    "bookId": 1,
+    "customerName": "John",
+    "createdBy": "b4c4d2c39ca17d7550f482c761a3811b09f6a46ca24b25ed7be1ecb0c42a577c",
+    "quantity": 1,
+    "timestamp": 1708322817660
+}
+```
 
 Allows you to view an existing order. Requires authentication.
+### Update an order ###
+
+PATCH `/orders/:orderId`
+
+Update an existing order. Requires authentication.
+
+The request body needs to be in JSON format and allows you to update the following properties:
+
+ - `customerName` - String
+
+ Example
+```
+PATCH /orders/PF6MflPDcuhWobZcgmJy5
+Authorization: Bearer <YOUR TOKEN>
+
+{
+  "customerName": "John"
+}
+```
+### Delete an order ###
+
+DELETE `/orders/:orderId`
+
+Delete an existing order. Requires authentication.
+
+The request body needs to be empty.
+
+ Example
+```
+DELETE /orders/PF6MflPDcuhWobZcgmJy5
+Authorization: Bearer <YOUR TOKEN>
+```
 
 ## API Authentication ##
 
